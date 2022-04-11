@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>Two Player Simple Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ins" id="ins">
+        <ul>
+            <li>Both the players are asked to choose a block alternatively.</li>
+            <li>A block may have 1 or 0 or a bomb.</li>
+            <li>When a player choose the block containing the bomb, the player with the highest score upto that point will be declared as the WINNER.</li>
+            <li>The board can be Resetted by clicking on RESET</li>
+            <li>When players decided to end the game, the person with the highest score till that point will be declared as WINNER</li>
+            <li>When both the scores conflict, it will be a tie. Players can restart the game with new scores by cliclking on RESET button</li>
+            <div class="close"  id="close" onclick="ins()">Close</div>
+        </ul>
+    </div>
+    <div class="a container">
+        <h1>TWO PLAYER SIMPLE MINESWEEPER</h1>
+        <h2 id="win">Player 0 is Winner</h2>
+        <div class="row">
+            <div class="b col-3">
+                <h1 class="p p1" id="pl1"></h1><br>
+                <img src="images/avatar/m1.png" alt="" srcset="" class="pi1">
+                <h3>Score</h3>
+                <h4 id="sc1"></h4>
+            </div>
+            <div class="b bm p col-6">
+                <div class="r1">
+                    <div class="c1 c" onclick="fun(0,0,1)"><img src="images/avatar/q.png" alt=""  id="p1" srcset=""></div>
+                    <div class="c2 c" onclick="fun(0,1,2)"><img src="images/avatar/q.png" alt=""  id="p2" srcset=""></div>
+                    <div class="c3 c" onclick="fun(0,2,3)"><img src="images/avatar/q.png" alt=""  id="p3" srcset=""></div>
+                    <div class="c4 c" onclick="fun(0,3,4)"><img src="images/avatar/q.png" alt=""  id="p4" srcset=""></div>
+                    <div class="c5 c" onclick="fun(0,4,5)"><img src="images/avatar/q.png" alt=""  id="p5" srcset=""></div>
+                </div>
+                <div class="r2">
+                    <div class="c6 c" onclick="fun(1,0,6)"><img src="images/avatar/q.png" id="p6" alt=""></div>
+                    <div class="c7 c" onclick="fun(1,1,7)"><img src="images/avatar/q.png" id="p7" alt=""></div>
+                    <div class="c8 c" onclick="fun(1,2,8)"><img src="images/avatar/q.png" id="p8" alt=""></div>
+                    <div class="c9 c" onclick="fun(1,3,9)"><img src="images/avatar/q.png" id="p9" alt=""></div>
+                    <div class="c10 c" onclick="fun(1,4,10)"><img src="images/avatar/q.png" id="p10" alt=""></div>
+                </div>
+                <div class="r3">
+                    <div class="c11 c" onclick="fun(2,0,11)"><img src="images/avatar/q.png" id="p11" alt=""></div>
+                    <div class="c12 c" onclick="fun(2,1,12)"><img src="images/avatar/q.png" id="p12" alt=""></div>
+                    <div class="c13 c" onclick="fun(2,2,13)"><img src="images/avatar/q.png" id="p13" alt=""></div>
+                    <div class="c14 c" onclick="fun(2,3,14)"><img src="images/avatar/q.png" id="p14" alt=""></div>
+                    <div class="c15 c" onclick="fun(2,4,15)"><img src="images/avatar/q.png" id="p15" alt=""></div>
+                </div>
+                <div class="r4">
+                    <div class="c16 c" onclick="fun(3,0,16)"><img src="images/avatar/q.png" id="p16" alt=""></div>
+                    <div class="c17 c" onclick="fun(3,1,17)"><img src="images/avatar/q.png" id="p17" alt=""></div>
+                    <div class="c18 c" onclick="fun(3,2,18)"><img src="images/avatar/q.png" id="p18" alt=""></div>
+                    <div class="c19 c" onclick="fun(3,3,19)"><img src="images/avatar/q.png" id="p19" alt=""></div>
+                    <div class="c20 c" onclick="fun(3,4,20)"><img src="images/avatar/q.png" id="p20" alt=""></div>
+                </div>
+                <div class="r5">
+                    <div class="c21 c" onclick="fun(4,0,21)"><img src="images/avatar/q.png" id="p21" alt=""></div>
+                    <div class="c22 c" onclick="fun(4,1,22)"><img src="images/avatar/q.png" id="p22" alt=""></div>
+                    <div class="c23 c" onclick="fun(4,2,23)"><img src="images/avatar/q.png" id="p23" alt=""></div>
+                    <div class="c24 c" onclick="fun(4,3,24)"><img src="images/avatar/q.png" id="p24" alt=""></div>
+                    <div class="c25 c" onclick="fun(4,4,25)"><img src="images/avatar/q.png" id="p25" alt=""></div>
+                </div>
+                <div class="btn-g" >
+                    <a href="index.html"><button class="s s1">Reset</button></a>
+                    <button class="s s2" onclick="ins()">Instructions</button>
+                    <button class="s s3" onclick="endgame()">End Game</button>
+                </div>
+
+            </div>
+            <div class="b col-3">
+                <h1 class="p p2" id="pl2"></h1><br>
+                <img src="images/avatar/m2.png" alt="" srcset="" class="pi2">
+                <h3>Score</h3>
+                <h4 id="sc2"></h4>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
